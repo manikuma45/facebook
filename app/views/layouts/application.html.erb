@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <header class="site-header">
+      <ul>
+        <li><%=link_to 'WorldBook'%></li>
+      </ul>
+    </header>
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -23,5 +28,8 @@
     <% end %>
 
     <%= yield %>
+    <footer class="footer">
+        footer
+    </footer>
   </body>
 </html>
