@@ -42,3 +42,4 @@ gem "twitter-bootstrap-rails"
 #CarrierWave 画像アップロード
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'jquery-rails'
