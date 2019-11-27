@@ -1,3 +1,21 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.each_messages {
+
+height: 230px;
+margin: 15px 0px;
+padding: 20px;
+border: 2px solid #ccc;
+border-radius: 10px;  
+}
+ul li {
+font-size: 12px;
+list-style: none;
+}
+
+.btn {
+	display: inline-block;
+	margin-top: 40px;
+
+}
