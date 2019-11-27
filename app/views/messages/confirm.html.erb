@@ -1,12 +1,15 @@
+<div class="container">
 <h3>以下の内容で、送信する。</h3>
 
 <%= form_with(model: @message, url: messages_path, local: true) do |form| %>
 <%= form.hidden_field :content %>
-<p>画像:<%= @message.image %></p>
 <p>本文:<%= @message.content %></p>
+
+<%= image_tag(@message.image.url) if @message.image && @message.image.url %>
+<%= form.hidden_field :image_cache %><br>
 <%= form.submit  "登録する", class: "btn btn-default btn-lg btn_green" %>
 <% end %>
 
 <%= link_to '戻る', :back, class: "btn btn-default btn-xs btn_black" %>
-
+</div>
 

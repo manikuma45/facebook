@@ -1,3 +1,5 @@
 <h1><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+<p><%= @user.name %>の投稿したメッセージ</p>
+<p><%=link_to '全メッセージ一覧', messages_path%></p>

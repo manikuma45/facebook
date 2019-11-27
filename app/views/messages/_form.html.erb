@@ -13,10 +13,16 @@
 
 <div class="form-group">
   <%= form.label :content %>
+  <%= form.hidden_field :content %>
   <%= form.text_area :content, class: "form-control", id: "input-text", row: 4  %>
-  <p id="counter">0文字</p>
 </div>
-<p><%=form.file_field :image %></p>
+
+<div>
+  <%=image_tag(@message.image.url) if @message.image && @message.image.url%>
+  <%=form.file_field :image %>
+  <%=form.hidden_field :image_cache %>
+
+  </div>
 <div class="actions">
   <%= form.submit  class: "btn btn-default btn-sm btn_green"  %>
 </div>

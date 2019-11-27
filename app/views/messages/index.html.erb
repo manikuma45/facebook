@@ -1,22 +1,32 @@
 <div class= "row">
  <div class="col-xs-10 col-xs-offset-1"> 
-  <p id="notice"><%= notice %></p>
+
   <% @messages.each do |message| %>
-  <div class="col-lg-4 col-sm-6 col-xs-12">
+  <div class="col-lg-12 col-sm-12 col-xs-12">
     <ul class = "each_messages">
-      <li>
         <ul class= "data">
-          <li><%= message.image %></li>
-          <li><%= message.content %></li>
+          <li>
+          <% if message.image? %>
+        <%= image_tag message.image.url %>
+        <% end %>
+          </li>
+
+          <li class="content">
+            <%= message.content %>
+          <%= message.user.name %>
+          </li>
         </ul>
-      </li>
-      <ul class= "buttons">
+      <div class= "btn">
         <li><%= link_to 'Show', message, class: "btn btn-default btn-sm btn_index"  %></li>
+      </div>
+      <div class= "btn">
         <li><%= link_to 'Edit', edit_message_path(message), class: "btn btn-default btn-sm btn_index"  %></li>
-      </ul>
+      </div>
+      <div class= "btn">
       <li><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-sm btn_index"  %></li>
+    </div>
     </ul>
   </div>
   <% end %>
-</div>   
+</div>
 </div>
