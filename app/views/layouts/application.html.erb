@@ -12,8 +12,9 @@
   <body>
     <header class="site-header">
      <% if logged_in? %>
-       <%= link_to "新規メッセージ", new_message_path, data: { turbolinks: false }%>
+       <%= link_to "新規メッセージ", new_message_path %>
        <%= link_to "プロフィール", user_path(current_user.id) %>
+       <%= link_to "メッセージ一覧",  messages_path %>
        <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
     <% else %>
     　 <%= link_to "新規アカウント", new_user_path %>
