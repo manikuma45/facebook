@@ -10,19 +10,16 @@
         <%= image_tag message.image.url %>
         <% end %>
           </li>
-
           <li class="content">
-            <%= message.content %>
-          <%= message.user.name %>
+            <p>内容:<%= message.content %></p>
+           <p>投稿者:<%= message.user.name %></p>
           </li>
         </ul>
-      <div class= "btn">
+      <div class= "row button">
         <li><%= link_to 'Show', message, class: "btn btn-default btn-sm btn_index"  %></li>
-      </div>
-      <div class= "btn">
+
         <li><%= link_to 'Edit', edit_message_path(message), class: "btn btn-default btn-sm btn_index"  %></li>
-      </div>
-      <div class= "btn">
+
       <li><%= link_to 'Delete', message, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-sm btn_index"  %></li>
     </div>
     </ul>
