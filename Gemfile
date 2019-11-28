@@ -36,10 +36,8 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-#Bootstrap
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]#Bootstrap
 gem "twitter-bootstrap-rails"
-#CarrierWave 画像アップロード
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'jquery-rails'
