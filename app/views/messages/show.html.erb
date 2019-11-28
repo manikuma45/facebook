@@ -1,14 +1,6 @@
 <div class= "row">
 	<div class="col-xs-10 col-xs-offset-1">
 		<div class="col-xs-12">
-			<p id="notice"><%= notice %></p>
-			<% unless @message.user_id == current_user.id %>
-			<% if @nice.present? %>
-			<%=link_to 'いいねを削除する', nice_path(id: @nice.id), method: :delete, class: 'btn btn-danger' %>
-			<% else %>
-			<%=link_to 'いいねをする', nices_path(message_id: @message.id), method: :post, class: 'btn btn-primary'%>
-			<% end %>
-			<% end %>
 		</div>
 			<p class="gazou">
 				<strong>image:</strong>
@@ -22,6 +14,13 @@
 				<strong>Content:</strong>
 				<%= @message.content %>
 			</p>
+			<% unless @message.user_id == current_user.id %>
+			<% if @nice.present? %>
+			<%=link_to 'いいねを削除する', nice_path(id: @nice.id), method: :delete, class: 'btn btn-danger' %>
+			<% else %>
+			<%=link_to 'いいねをする', nices_path(message_id: @message.id), method: :post, class: 'btn btn-primary'%>
+			<% end %>
+			<% end %>
 
 			<%= link_to 'Edit', edit_message_path(@message), class: "btn btn-default btn-sm btn_black" %> 
 			<%= link_to 'Back', messages_path, class: "btn btn-default btn-sm btn_black" %>
