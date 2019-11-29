@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>WorldBook</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>WorldBook</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'raload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'raload' %>
+</head>
 
-  <body>
-    <header class="site-header">
-     <% if logged_in? %>
-       <%= link_to "新規メッセージ", new_message_path %>
-       <%= link_to "プロフィール", user_path(current_user.id) %>
-       <%= link_to "メッセージ一覧",  messages_path %>
-       <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
-    <% else %>
-    　 <%= link_to "新規アカウント", new_user_path %>
-       <%= link_to "ログイン", new_session_path %>
-    <% end %>
-    </header>
+<body>
+  <header class="site-header">
+   <% if logged_in? %>
+   <%= link_to "新規メッセージ", new_message_path %>
+   <%= link_to "プロフィール", user_path(current_user.id) %>
+   <%= link_to "メッセージ一覧",  messages_path %>
+   <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+   <% else %>
+   　 <%= link_to "新規アカウント", new_user_path %>
+   <%= link_to "ログイン", new_session_path %>
+   <% end %>
+ </header>
 
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
-    <%= yield %>
-    <footer class="footer">
-        footer
-    </footer>
-  </body>
+ <% flash.each do |key, value| %>
+ <%= content_tag(:div, value, class: "#{key}") %>
+ <% end %>
+ <%= yield %>
+ <footer class="footer">
+  footer
+</footer>
+</body>
 </html>

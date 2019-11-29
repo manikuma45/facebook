@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-#  get '/messages', to: 'messages#index'
-#resources :nices, only:[:create, :destroy]
-resources :messages do
+	resources :messages do
 		collection do
 			post :confirm
 		end

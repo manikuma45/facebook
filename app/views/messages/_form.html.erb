@@ -1,25 +1,23 @@
 <%= form_with(model: @message, local: true,url: choose_new_or_edit ) do |form| %>
 <% if message.errors.any? %>
 <div id="error_explanation">
-  <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
-
- 
+	<h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
 </div>
 <% end %>
 
 <div class="form-group">
-  <%= form.label :content %>
-  <%= form.hidden_field :content %>
-  <%= form.text_area :content, class: "form-control", id: "input-text", row: 4  %>
+	<%= form.label :content %>
+	<%= form.hidden_field :content %>
+	<%= form.text_area :content, class: "form-control", id: "input-text", row: 4  %>
 </div>
 
 <div>
-  <%=image_tag(@message.image.url) if @message.image && @message.image.url%>
-  <%=form.file_field :image %>
-  <%=form.hidden_field :image_cache %>
+	<%=image_tag(@message.image.url) if @message.image && @message.image.url%>
+	<%=form.file_field :image %>
+	<%=form.hidden_field :image_cache %>
 
-  </div>
+</div>
 <div class="actions">
-  <%= form.submit  class: "btn btn-default btn-sm btn_green"  %>
+	<%= form.submit  class: "btn btn-default btn-sm btn_green"  %>
 </div>
 <% end %>

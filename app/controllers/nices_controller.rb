@@ -1,5 +1,5 @@
 class NicesController < ApplicationController
-	
+
 	def create
 		nice = current_user.nices.create(message_id: params[:message_id])
 		redirect_to messages_url, notice: "#{nice.message.user.name}さんのメッセージにいいねをしました"
